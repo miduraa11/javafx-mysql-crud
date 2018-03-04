@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
       <VBox layoutX="26.0" layoutY="22.0" spacing="15.0">
@@ -52,7 +51,7 @@
             <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Delete" />
          </children>
       </HBox>
-      <TableView layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
+      <TableView fx:id="jTable" layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
         <columns>
           <TableColumn prefWidth="100.0" text="Title" />
           <TableColumn prefWidth="100.0" text="Author" />
