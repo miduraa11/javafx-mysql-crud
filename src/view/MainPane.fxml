@@ -51,12 +51,12 @@
             <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Delete" />
          </children>
       </HBox>
-      <TableView fx:id="jTable" layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
+      <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="Title" />
-          <TableColumn prefWidth="100.0" text="Author" />
-            <TableColumn prefWidth="100.0" text="Year" />
-            <TableColumn prefWidth="100.0" text="Pages" />
+          <TableColumn fx:id="titleColumn" prefWidth="100.0" text="Title" />
+          <TableColumn fx:id="authorColumn" prefWidth="100.0" text="Author" />
+            <TableColumn fx:id="yearColumn" prefWidth="100.0" text="Year" />
+            <TableColumn fx:id="pagesColumn" prefWidth="100.0" text="Pages" />
         </columns>
       </TableView>
    </children>
