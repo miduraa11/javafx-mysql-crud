@@ -14,6 +14,11 @@
    <children>
       <VBox layoutX="26.0" layoutY="22.0" spacing="15.0">
          <children>
+            <Label text="ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             <Label text="Title">
                <font>
                   <Font size="14.0" />
@@ -38,25 +43,28 @@
       </VBox>
       <VBox layoutX="87.0" layoutY="22.0" prefHeight="130.0" prefWidth="129.0" spacing="10.0">
          <children>
+            <TextField fx:id="idField" />
             <TextField fx:id="titleField" />
             <TextField fx:id="authorField" />
             <TextField fx:id="yearField" />
             <TextField fx:id="pagesField" />
+           
          </children>
       </VBox>
-      <HBox layoutX="26.0" layoutY="178.0" spacing="10.0">
+      <HBox layoutX="26.0" layoutY="202.0" spacing="10.0">
          <children>
-            <Button fx:id="insertButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Insert" />
-            <Button fx:id="updateButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Update" />
-            <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="Delete" />
+            <Button fx:id="insertButton" mnemonicParsing="false" onAction="#insertButton" prefHeight="30.0" prefWidth="60.0" text="Insert" />
+            <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="60.0" text="Update" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButton" prefHeight="30.0" prefWidth="60.0" text="Delete" />
          </children>
       </HBox>
       <TableView fx:id="TableView" layoutX="238.0" layoutY="22.0" prefHeight="210.0" prefWidth="400.0">
         <columns>
-          <TableColumn fx:id="titleColumn" prefWidth="100.0" text="Title" />
-          <TableColumn fx:id="authorColumn" prefWidth="100.0" text="Author" />
-            <TableColumn fx:id="yearColumn" prefWidth="100.0" text="Year" />
-            <TableColumn fx:id="pagesColumn" prefWidth="100.0" text="Pages" />
+          <TableColumn fx:id="idColumn" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="titleColumn" prefWidth="120.0" text="Title" />
+            <TableColumn fx:id="authorColumn" prefWidth="120.0" text="Author" />
+            <TableColumn fx:id="yearColumn" prefWidth="60.0" text="Year" />
+            <TableColumn fx:id="pagesColumn" prefWidth="60.0" text="Pages" />
         </columns>
       </TableView>
    </children>

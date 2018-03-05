@@ -26,6 +26,9 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     @FXML
+    private TextField idField;
+    
+    @FXML
     private TextField titleField;
 
     @FXML
@@ -50,6 +53,9 @@ public class MainController implements Initializable {
     private TableView<Books> TableView;
     
     @FXML
+    private TableColumn<Books, Integer> idColumn;
+    
+    @FXML
     private TableColumn<Books, String> titleColumn;
 
     @FXML
@@ -61,6 +67,38 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Books, Integer> pagesColumn;
 
+    @FXML
+    private void insertButton() {
+    	String query = "insert into books values("+idField.getText()+",'"+titleField.getText()+"','"+authorField.getText()+"',"+yearField.getText()+","+pagesField.getText()+")";
+    	executeQuery(query);
+    	showBooks();
+    }
+    
+    
+    @FXML 
+    private void updateButton() {
+    String query = "UPDATE books SET Title='"+titleField.getText()+"',Author='"+authorField.getText()+"',Year="+yearField.getText()+",Pages="+pagesField.getText()+" WHERE ID="+idField.getText()+"";
+    executeQuery(query);
+	showBooks();
+    }
+    
+    @FXML
+    private void deleteButton() {
+    	String query = "DELETE FROM books WHERE ID="+idField.getText()+"";
+    	executeQuery(query);
+    	showBooks();
+    }
+    
+    public void executeQuery(String query) {
+    	Connection conn = getConnection();
+    	Statement st;
+    	try {
+			st = conn.createStatement();
+			st.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	showBooks();
@@ -90,7 +128,7 @@ public class MainController implements Initializable {
 			rs = st.executeQuery(query);
 			Books books;
 			while(rs.next()) {
-				books = new Books(rs.getString("title"),rs.getString("Author"),rs.getInt("Year"),rs.getInt("Pages"));
+				books = new Books(rs.getInt("Id"),rs.getString("Title"),rs.getString("Author"),rs.getInt("Year"),rs.getInt("Pages"));
 				booksList.add(books);
 				}
 		} catch (Exception e) {
@@ -103,6 +141,7 @@ public class MainController implements Initializable {
     public void showBooks() {
     	ObservableList<Books> list = getBooksList();
     	
+    	idColumn.setCellValueFactory(new PropertyValueFactory<Books,Integer>("id"));
     	titleColumn.setCellValueFactory(new PropertyValueFactory<Books,String>("title"));
     	authorColumn.setCellValueFactory(new PropertyValueFactory<Books,String>("author"));
     	yearColumn.setCellValueFactory(new PropertyValueFactory<Books,Integer>("year"));
