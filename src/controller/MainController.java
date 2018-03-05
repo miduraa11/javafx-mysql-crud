@@ -137,7 +137,7 @@ public class MainController implements Initializable {
     	return booksList;
     }
     
-    // need to be finished - I still don't know how to view ArrayList in TableView
+    // I had to change ArrayList to ObservableList I didn't find another option to do this but this works :)
     public void showBooks() {
     	ObservableList<Books> list = getBooksList();
     	
