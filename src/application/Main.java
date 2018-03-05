@@ -14,7 +14,7 @@ public class Main extends Application {
                 "/view/MainPane.fxml"));
         Scene scene = new Scene(parent);
         stage.setScene(scene);
-        stage.setTitle("Login Page");
+        stage.setTitle("Library");
         stage.show();
         
     }
