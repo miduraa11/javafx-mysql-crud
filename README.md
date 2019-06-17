@@ -8,9 +8,7 @@ CRUD app made with JavaFX and MySQL database.
 
 ![crud_1](https://user-images.githubusercontent.com/26482766/37049278-b46c244e-2170-11e8-9eb7-a753b7ba103e.png)
 
-This two books were loaded from MySQL database. On the first attempt to load data and display them in TableView 
-I used ArrayList but there were a lot of problems so I find solution by using ObservableList. Now it's working 
-but I need to learn more about this List.
+This two books were loaded from MySQL database.
 
 ### Insert button
 
